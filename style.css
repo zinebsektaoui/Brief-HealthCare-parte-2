@@ -210,3 +210,17 @@ table th {
 .red{
     border-color: #ff0008;
 }
+
+.success{
+    text-align: center;
+    color: rgb(0, 181, 0);
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+.danger{
+    text-align: center;
+    color: red;
+    font-size: 17px;
+    font-weight: bold;
+}

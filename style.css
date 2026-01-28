@@ -1,0 +1,212 @@
+/* style.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.Header {
+    display: flex;
+    justify-content: space-between; /* better than huge gap */
+    align-items: center;
+    background-color: #D9D9D9;
+    padding: 0 20px;
+    height: 60px;
+    padding: 0 40px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 3px 2px 5px rgba(55, 55, 55, 0.15);
+}
+.Header > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* small space between icon and title */
+}
+Header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0e43be;
+    margin-bottom: 0;
+}
+hr{
+    width: 190px;
+    color: black;
+    margin-left: 0;
+    margin-top: -10px;
+    height: 2px;
+    background-color: black;
+}
+
+
+.search {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 2px solid #0e43be;
+    background-color: #f3f3f3;
+    width: 160px;
+    height: 10px;
+}
+Header div button{
+    border-radius: 5px;
+    background-color: #0e43be;
+    border: none;
+    color: white;
+    width: 100px;
+    font-size: 13px;
+    height: 30px;
+    width: 100px;
+}
+    
+.content {
+    margin: 20px 30px;
+}
+
+.table-container {
+    margin-top: 30px;
+}
+        
+        
+        table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #dc3545;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.add-request {
+    margin-top: 30px;
+}
+
+.add-request h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.add-request input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.add-btn {
+    padding: 12px 25px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.add-btn:hover {
+    background-color: #218838;
+}
+
+ Messages 
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.warning-message {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .Container {
+        padding: 15px;
+    }
+
+    Header h1 {
+        font-size: 24px;
+    }
+
+    .search {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    table th, table td {
+        padding: 10px;
+    }
+
+    .add-request input {
+        padding: 10px;
+    }
+
+    .add-btn {
+        width: 100%;
+        padding: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    Header h1 {
+        font-size: 20px;
+    }
+
+    .Container {
+        padding: 10px;
+    }
+
+    table th, table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .delete-btn {
+        font-size: 14px;
+    }
+
+    .add-request input {
+        padding: 8px;
+    }
+
+    .add-btn {
+        padding: 12px;
+        font-size: 16px;
+    }
+} 
+
+
+/* required inputs */
+.red{
+    border-color: #ff0008;
+}

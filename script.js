@@ -33,31 +33,31 @@ function addRequest(e) {
       "Veuillez remplir tous les champs avant de soumettre le formulaire !";
     formAlerts.classList.add("danger");
     return;
-    } else {
-        const request = {
-        id: count++,
-        fName: fName,
-        sName: sName,
-        tl: tl,
-        mail: mail,
-        motif: motif,
-        date: date,
-        };
-        requests.push(request);
-        console.log(requests);
-        formAlerts.innerHTML = "Demande bien ajouté :)";
-        formAlerts.classList.add("success");
-        arr.forEach((input) => {
-        if (input !== "") {
-            input.classList.remove("red");
-        }
-        });
-        displayAll();
-        document.getElementById("addRequestForm").reset();
-    }
-setTimeout(() => {
-  formAlerts.style.display = "none";
-}, 3000);
+  } else {
+    const request = {
+      id: count++,
+      fName: fName,
+      sName: sName,
+      tl: tl,
+      mail: mail,
+      motif: motif,
+      date: date,
+    };
+    requests.push(request);
+    console.log(requests);
+    formAlerts.innerHTML = "Demande bien ajouté :)";
+    formAlerts.classList.add("success");
+    arr.forEach((input) => {
+      if (input !== "") {
+        input.classList.remove("red");
+      }
+    });
+    displayAll();
+    document.getElementById("addRequestForm").reset();
+  }
+  setTimeout(() => {
+    formAlerts.style.display = "none";
+  }, 3000);
 }
 
 function displayAll() {
@@ -100,9 +100,20 @@ function drop(id) {
   }, 3000);
 }
 
-
-function search(){
-    let inputValue = document.getElementsByTagName("button")[0].value
-    let result = requests.filter(request => request.motif === inputValue)
-    console.log(result);
+function search() {
+  let inputValue = document.getElementsByClassName("search")[0].value;
+  let result = requests.filter((request) => request.motif === inputValue)[0];
+//   console.log(result);
+  let tbody = document.querySelector("tbody");
+  tbody.innerHTML = "";
+  let row = document.createElement("tr");
+  tbody.innerHTML = `
+    <td>${result.fName} ${result.sName}</td>
+    <td>${result.tl}</td>
+    <td>${result.date}</td>
+    <td>${result.motif}</td>
+    <td><i onClick="drop(${result.id})" class="fa-solid fa-trash-can" style="color: #a30d11;"></i></td>
+`;
+  tbody.appendChild(row);
+  console.log(result);
 }

@@ -25,7 +25,7 @@ Header h1 {
     font-size: 28px;
     font-weight: bold;
     color: #0e43be;
-    margin-bottom: 0;
+    margin-bottom: 20px;
 }
 hr{
     width: 190px;
@@ -36,12 +36,11 @@ hr{
     background-color: black;
 }
 
-
 .search {
     padding: 8px 15px;
     border-radius: 5px;
     border: 2px solid #0e43be;
-    background-color: #f3f3f3;
+    background-color: #ffffff;
     width: 160px;
     height: 10px;
 }
@@ -50,10 +49,9 @@ Header div button{
     background-color: #0e43be;
     border: none;
     color: white;
-    width: 100px;
     font-size: 13px;
     height: 30px;
-    width: 100px;
+    width: 30px;
 }
     
 .content {

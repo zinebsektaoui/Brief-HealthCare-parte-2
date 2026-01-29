@@ -45,6 +45,12 @@ function addRequest(e) {
     };
     requests.push(request);
     console.log(requests);
+
+    // calcule des demande 
+    let total = document.querySelector(".total")
+    total.innerHTML = requests.length + " Demande au total"
+
+    // msg a affiché
     formAlerts.innerHTML = "Demande bien ajouté :)";
     formAlerts.classList.add("success");
     arr.forEach((input) => {

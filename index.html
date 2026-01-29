@@ -14,16 +14,15 @@
           <i class="fa-solid fa-user-group" style="color: #0e43be"></i>
           <h1 class="text-red-500">Pré-admission</h1>
         </div>
-        <div>
+        <div class="searchgroup">
           <input type="text" placeholder="Chercher par Motif" class="search"/>
           <button onclick="search()"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
       </header>
 
       <section class="content">
-          
         <div class="table-container">
-            <h3 class="title">4 demandes au total</h3>
+            <h3 class="total">Aucune demande pour l'instant</h3>
             <hr/>
             <div class="table-alerts"></div>
             <table>
@@ -42,14 +41,19 @@
 
         <div class="form">
           <h3>Ajouter une demande :</h3>
+          <hr>
           <div class="form-alerts"></div>
           <form id="addRequestForm">
-            <input type="text" placeholder="Nom" id="fName" />
-            <input type="text" placeholder="Prénom" id="sName" />
-            <input type="tel" placeholder="Téléphone" id="tl" />
-            <input type="email" placeholder="Email" id="mail" />
-            <input type="text" placeholder="Motif" id="motif" />
-            <input type="date" placeholder="JJ/MM/AAAA" id="date" />
+            <div>
+              <input type="text" placeholder="Nom" id="fName" />
+              <input type="text" placeholder="Prénom" id="sName" />
+              <input type="tel" placeholder="Téléphone" id="tl" />
+              <input type="email" placeholder="Email" id="mail" />
+            </div>
+            <div>
+              <input type="text" placeholder="Motif" id="motif" />
+              <input type="date" placeholder="JJ/MM/AAAA" id="date" />
+            </div>
             <button type="submit" class="add-btn" id="add">Ajouter</button>
           </form>
         </div>

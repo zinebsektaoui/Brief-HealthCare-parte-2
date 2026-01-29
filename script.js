@@ -109,17 +109,22 @@ function drop(id) {
 function search() {
   let inputValue = document.getElementsByClassName("search")[0].value;
   let result = requests.filter((request) => request.motif === inputValue)[0];
-//   console.log(result);
   let tbody = document.querySelector("tbody");
   tbody.innerHTML = "";
   let row = document.createElement("tr");
+  if(result){
+    tbody.innerHTML = `
+      <td>${result.fName} ${result.sName}</td>
+      <td>${result.tl}</td>
+      <td>${result.date}</td>
+      <td>${result.motif}</td>
+      <td><i onClick="drop(${result.id})" class="fa-solid fa-trash-can" style="color: #a30d11;"></i></td>
+  `;
+}else{
   tbody.innerHTML = `
-    <td>${result.fName} ${result.sName}</td>
-    <td>${result.tl}</td>
-    <td>${result.date}</td>
-    <td>${result.motif}</td>
-    <td><i onClick="drop(${result.id})" class="fa-solid fa-trash-can" style="color: #a30d11;"></i></td>
-`;
-  tbody.appendChild(row);
-  console.log(result);
+  <td colspan="5" style="text-align:center">Demande non trouvé</td>
+  `;
+}
+tbody.appendChild(row);
+console.log(result);
 }

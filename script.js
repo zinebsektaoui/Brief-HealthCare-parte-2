@@ -48,7 +48,7 @@ function addRequest(e) {
 
     // calcule des demande 
     let total = document.querySelector(".total")
-    total.innerHTML = requests.length + " Demande au total"
+    total.innerHTML = requests.length + " Demande(s) au total"
 
     // msg a affiché
     formAlerts.innerHTML = "Demande bien ajouté :)";

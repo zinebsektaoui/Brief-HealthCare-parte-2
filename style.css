@@ -21,7 +21,7 @@ body {
     align-items: center;
     gap: 10px; /* small space between icon and title */
 }
-Header h1 {
+.Header h1 {
     font-size: 28px;
     font-weight: bold;
     color: #0e43be;
@@ -44,7 +44,7 @@ hr{
     width: 160px;
     height: 10px;
 }
-Header div button{
+.Header div button{
     border-radius: 5px;
     background-color: #0e43be;
     border: none;
@@ -188,144 +188,67 @@ table tbody tr:hover{
     font-weight: bold;
 }
 
-
-
-@media (max-width: 768px) {
-    .Container {
-        padding: 15px;
-    }
-
-    Header h1 {
-        font-size: 24px;
-    }
-
-    .search {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    table th, table td {
-        padding: 10px;
-    }
-
-    .add-request input {
-        padding: 10px;
-    }
-
-    .add-btn {
-        width: 100%;
-        padding: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-    Header h1 {
-        font-size: 20px;
-    }
-
-    .Container {
-        padding: 10px;
-    }
-
-    table th, table td {
-        padding: 8px;
-        font-size: 14px;
-    }
-
-    .delete-btn {
-        font-size: 14px;
-    }
-
-    .add-request input {
-        padding: 8px;
-    }
-
-    .add-btn {
-        padding: 12px;
-        font-size: 16px;
-    }
-}
-
+/* iPad */
 @media (max-width: 768px) {
 
-    /* Motif */
-  table td:nth-child(1)::before {
-    font-family: "Font Awesome 6 Free";
-    content: "\f044"; /* pen */
-    font-weight: 900;
-    margin-right: 8px;
-    color: #1e4fd6;
+  .Header h1 {
+    font-size: 20px;
   }
 
-  /* Date */
-  table td:nth-child(2)::before {
-    font-family: "Font Awesome 6 Free";
-    content: "\f073"; /* calendar */
-    font-weight: 900;
-    margin-right: 8px;
-    color: #1e4fd6;
+  .Container {
+    padding: 10px;
   }
 
-  /* Téléphone */
-  table td:nth-child(3)::before {
-    font-family: "Font Awesome 6 Free";
-    content: "\f095"; /* phone */
-    font-weight: 900;
-    margin-right: 8px;
-    color: #1e4fd6;
+  table th,
+  table td {
+    padding: 8px;
+    font-size: 14px;
   }
-  header{
-    padding: 0;
-    display: flex;
-    gap: 30px;
-    font-size: 13px;
-  }
-  .Header h1{
+
+  .add-btn {
     font-size: 15px;
-    margin-bottom: 0;
   }
-  header .searchgroup input{
-    width: 55px;
-  }
-  body{
-    margin: 0;
-    padding: 0;
-  }
-  table thead {
-    display: none;
-  }
+}
 
-  table tbody {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+/* Phone */
+@media (max-width: 500px) {
+  /* Header */
+  .Header {
+    padding: 0 15px;
     gap: 15px;
   }
-
-  table tr {
-    display: block;
-    background: #e3edff;
-    border-radius: 14px;
-    padding: 14px;
+  .Header h1 {
+    font-size: 16px;
   }
-
-  table td {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 0;
-    font-size: 13px;
-    border: none;
+  .searchgroup input {
+    width: 90px;
   }
-
-  table td::before {
-    content: none;
-  }
-
-  .delete-btn {
-    margin-top: 10px;
+  /* TABLE SCROLL */
+  .table-container {
     width: 100%;
-    padding: 8px;
-    border-radius: 8px;
-    font-size: 13px;
+    overflow-x: auto;
   }
+  table {
+    min-width: 700px;
+  }
+  table th, table td {
+    white-space: nowrap;
+  }
+  /* Scrollbar */
+  .table-container::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .table-container::-webkit-scrollbar-thumb {
+    background: #0e43be;
+    border-radius: 10px;
+  }
+
+  .table-container::-webkit-scrollbar-track {
+    background: #e5e7eb;
+  }
+
+  .add-btn {
+    width: 100%;
+}
 }

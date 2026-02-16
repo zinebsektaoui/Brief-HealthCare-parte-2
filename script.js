@@ -47,8 +47,8 @@ function addRequest(e) {
     console.log(requests);
 
     // calcule des demande 
-    let total = document.querySelector(".total")
-    total.innerHTML = requests.length + " Demande(s) au total"
+    let total = document.querySelector(".total");
+    total.innerHTML = requests.length + " Demande(s) au total";
 
     // msg a affiché
     formAlerts.innerHTML = "Demande bien ajouté :)";
@@ -75,7 +75,7 @@ function displayAll() {
             <td>${request.fName} ${request.sName}</td>
             <td>${request.tl}</td>
             <td>${request.date}</td>
-            <td>${request.motif}</td>
+            <td>${request.motif.slice(0, 40) + "..."}</td>
             <td><i onClick="drop(${request.id})" class="fa-solid fa-trash-can" style="color: #a30d11;"></i></td>
         `;
     tbody.appendChild(tr);
@@ -108,36 +108,38 @@ function drop(id) {
 
 function search() {
   let inputValue = document.getElementsByClassName("search")[0].value;
-  let result = requests.filter((request) => request.motif === inputValue)[0];
+  let result = requests.filter(
+    (request) => request.motif.toLowerCase() === inputValue.toLowerCase(),
+  )[0];
   let tbody = document.querySelector("tbody");
   tbody.innerHTML = "";
   let row = document.createElement("tr");
-  if(result){
+  if (result) {
     tbody.innerHTML = `
       <td>${result.fName} ${result.sName}</td>
       <td>${result.tl}</td>
       <td>${result.date}</td>
-      <td>${result.motif}</td>
+      <td>${result.motif.slice(0, 40) + "..."}</td>
       <td><i onClick="drop(${result.id})" class="fa-solid fa-trash-can" style="color: #a30d11;"></i></td>
-  `;
-}else{
-  tbody.innerHTML = `
-  <td colspan="5" style="text-align:center">Demande non trouvé</td>
-  `;
-}
-tbody.appendChild(row);
-console.log(result);
+    `;
+  } else {
+    tbody.innerHTML = `
+    <td colspan="5" style="text-align:center">Demande non trouvé</td>
+    `;
+  }
+  tbody.appendChild(row);
+  console.log(result);
 }
 
 
 // Dark and light mode :
 
-let btn = document.getElementById("themeToggle")
+let btn = document.getElementById("themeToggle");
 btn.addEventListener("click", () => {
   document.body.classList.toggle("dark");
-  if(document.body.classList.contains("dark")){
-    btn.innerHTML = "☀️"
-  }else{
-    btn.innerHTML = "🌙"
+  if (document.body.classList.contains("dark")) {
+    btn.innerHTML = "☀️";
+  } else {
+    btn.innerHTML = "🌙";
   }
-})
+});
